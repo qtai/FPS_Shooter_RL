@@ -30,5 +30,33 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAxis("MoveForward", this, &AMyCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AMyCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("Turn", this, &AMyCharacter::AddControllerYawInput);
+	PlayerInputComponent->BindAxis("LookUp", this, &AMyCharacter::AddControllerPitchInput);
+
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AMyCharacter::StartJump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AMyCharacter::StopJump);
 }
 
+void AMyCharacter::MoveForward(float Value)
+{
+	FVector Direction = GetActorForwardVector();
+	AddMovementInput(Direction, Value);
+}
+
+void AMyCharacter::MoveRight(float Value)
+{
+	FVector Direction = GetActorRightVector();
+	AddMovementInput(Direction, Value);
+}
+
+void AMyCharacter::StartJump()
+{
+	bPressedJump = true;
+}
+
+void AMyCharacter::StopJump()
+{
+	bPressedJump = false;
+}
