@@ -6,11 +6,21 @@
 #include "GameFramework/Character.h"
 #include "MyCharacter.generated.h"
 
+
 UCLASS()
 class FPS_SHOOTER_RL_API AMyCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+		
+	UPROPERTY(EditAnywhere, Category = Mesh)
+	class USkeletalMeshComponent* MeshFov;
+
+	UPROPERTY(EditAnywhere)
+	class UCameraComponent* Camera;
+
+	
+	
 public:
 	// Sets default values for this character's properties
 	AMyCharacter();

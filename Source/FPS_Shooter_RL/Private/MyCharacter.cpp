@@ -2,13 +2,25 @@
 
 
 #include "MyCharacter.h"
+#include "MySkeletalMeshComponent.h"
+#include "Camera/CameraComponent.h"
+
 
 // Sets default values
 AMyCharacter::AMyCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	
 
+	 Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+	 Camera->SetupAttachment(RootComponent);
+
+	MeshFov = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("MeshFov"));
+	MeshFov->SetOnlyOwnerSee(true);
+	MeshFov->SetupAttachment(Camera);
+	
+	
 }
 
 // Called when the game starts or when spawned
