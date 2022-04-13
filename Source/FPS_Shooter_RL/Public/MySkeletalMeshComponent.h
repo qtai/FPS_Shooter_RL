@@ -14,6 +14,6 @@ class FPS_SHOOTER_RL_API UMySkeletalMeshComponent : public USkeletalMeshComponen
 {
 	GENERATED_BODY()
 
-	virtual FMatrix GetRenderMatrix() const override;
+	
 	
 };

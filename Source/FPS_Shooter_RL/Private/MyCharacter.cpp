@@ -13,8 +13,8 @@ AMyCharacter::AMyCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 	
 
-	 Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-	 Camera->SetupAttachment(RootComponent);
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+	Camera->SetupAttachment(RootComponent);
 
 	MeshFov = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("MeshFov"));
 	MeshFov->SetOnlyOwnerSee(true);
