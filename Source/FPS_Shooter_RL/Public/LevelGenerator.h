@@ -19,7 +19,7 @@ public:
 
 private:
 
-	ULevelStreaming* CreateInstance(ULevelStreaming* Level, FString InstanceUniqueName);
+	//ULevelStreaming* CreateInstance(ULevelStreaming* Level, FString InstanceUniqueName);
 
 	int16 NumX = 5, NumY = 5;
 	int32 GridSize = 2000;

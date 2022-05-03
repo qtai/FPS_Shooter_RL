@@ -29,7 +29,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+private:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -47,4 +47,7 @@ public:
 
 	UFUNCTION()
 	void StopJump();
+
+	UFUNCTION(BlueprintCallable)
+	static void HandleTargets(UPARAM(ref) TArray<FVector>& InputLocations, TArray<FVector>& OutputLocations);
 };

@@ -72,3 +72,7 @@ void AMyCharacter::StopJump()
 {
 	bPressedJump = false;
 }
+
+void AMyCharacter::HandleTargets(TArray<FVector>& InputLocations, TArray<FVector>& OutputLocations)
+{
+}
